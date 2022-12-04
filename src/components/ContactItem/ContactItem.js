@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "redux/myItems/slice";
-// import PropTypes from 'prop-types';
 import styles from './ContactItem.module.css';
 
 const ContactItem = () => {
@@ -17,7 +16,7 @@ const ContactItem = () => {
       <table className={styles.list}>
          <tbody>
             {visibleName().map(({ id, name, number }) => (
-               <tr className={styles.item} id={id}>
+               <tr className={styles.item} id={id} key={id}>
                   <td>{name}: {number}</td>
                   <td>
                      <button className={styles.button}
@@ -31,12 +30,5 @@ const ContactItem = () => {
          </tbody>
       </table>
    )}
-
-// ContactItem.propType = {
-//    id: PropTypes.string.isRequired,
-//    name: PropTypes.string.isRequired,
-//    number: PropTypes.string.isRequired,
-//    deleteContact: PropTypes.func.isRequired,
-// };
 
 export default ContactItem;
