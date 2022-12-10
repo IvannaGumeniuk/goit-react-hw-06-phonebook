@@ -1,4 +1,3 @@
-// import { configit initgit branch -M mainureStore } from '@reduxjs/toolkit'
 import { createStore, combineReducers } from '@reduxjs/toolkit';
 import { myItems } from './myItems/slice';
 import { contactFilter } from './filter/slice';
@@ -21,12 +20,3 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = createStore(persistedReducer);
 export const persistor = persistStore(store);
-
-
-
-// export const store = configureStore({
-//     reducer: {
-//         contacts: [],
-//         filter: ""
-//     },
-// })
